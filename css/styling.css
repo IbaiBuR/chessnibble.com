@@ -38,3 +38,37 @@ a {
     text-decoration: none !important;
 }
 
+@media screen and (max-width: 750px) {
+    #myBoard {
+        display: none !important; /* Dont display board in smaller screens */
+    }
+    .why {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-family: monospace;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    #myBoard {
+        width: 400px; /* Dont display board in smaller screens */
+    }
+    .why {
+        display: flex;
+        flex-direction: column;
+        float: right;
+        text-align: center;
+        margin-right: 5%;
+        font-family: monospace;
+        font-size: 12px;
+    }
+}
+/* Adjust styles for larger screens */
+@media screen and (min-width: 1800px) {
+    #myBoard {
+        width: 600px; /* Increase board size for bigger screens */
+    }
+}
+

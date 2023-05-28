@@ -54,32 +54,41 @@
         </a>
     </p>
     </div>
-    <div id="myBoard" style="width: 600px">
+    <div id="myBoard">
         <!-- Completely random chess game -->
         <script type="module">
             import { Chess } from './js/chess.js'
             var board = null
             var game = new Chess()
-            function makeRandomMove ()
-            {
+
+            function makeRandomMove() {
                 var possibleMoves = game.moves()
 
-                if (game.game_over())
-                {
+                if (game.game_over()) {
                     game.reset();
-                    board.start();
+                    if (isScreenSizeLarge()) {
+                        board.start();
+                    }
                     window.setTimeout(makeRandomMove, 500);
                     return;
                 }
 
                 var randomIdx = Math.floor(Math.random() * possibleMoves.length)
                 game.move(possibleMoves[randomIdx])
-                board.position(game.fen())
+                if (isScreenSizeLarge()) {
+                    board.position(game.fen())
+                }
 
                 window.setTimeout(makeRandomMove, 500)
             }
 
-            board = Chessboard('myBoard', 'start')
+            function isScreenSizeLarge() {
+                return window.innerWidth >= 768;
+            }
+
+            if (isScreenSizeLarge()) {
+                board = Chessboard('myBoard', 'start')
+            }
 
             window.setTimeout(makeRandomMove, 500)
         </script>
