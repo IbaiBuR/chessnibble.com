@@ -1,0 +1,40 @@
+body{
+    background: #333333;
+    color: white;
+}
+footer {
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    width: 95%;
+    color: white;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+.centerizer {
+    justify-content: center;
+    text-align: center;
+    font-family: monospace;
+}
+#copyright-symbol{
+    font-size: 20px;
+}
+.why {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    text-align: center;
+    margin-right: 6%;
+    font-family: monospace;
+    font-size: 15px;
+}
+.why h3{
+    margin-bottom: 5px;
+}
+
+a {
+    color: white;
+    text-decoration: none !important;
+}
+

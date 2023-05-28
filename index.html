@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chessnibble!</title>
+    <!-- Metadata Related -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ibai Burgos">
+    <meta name="description" content="Chessnibble's main website">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Chessnibble!">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chessnibble.com" />
+    <meta property="og:description" content="Chessnibble's main website">
+    <meta property="og:image" content="https://github.com/IbaiBuR/RChess/blob/main/img/icon.jpeg">
+    <!-- No more Metadata for now -->
+    <link rel="icon" type="image/png" href="/img/favicon.ico"/>
+    <link rel="stylesheet" href="css/chessboard-1.0.0.css">
+    <link rel="stylesheet" href="css/styling.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/chessboard-1.0.0.js"></script>
+    <script src="https://kit.fontawesome.com/4319ce394e.js" crossorigin="anonymous"></script>
+    <script type="module" src="js/chess.js"></script>
+</head>
+<body>
+    <div class="centerizer">
+        <h1>Chessnibble is finally <a href="https://chessnibble.com">here!</a></h1>
+    </div>
+    <div class="centerizer" style="display: flex">
+    <!-- Social networks! -->
+    <p>
+        <a href="https://github.com/IbaiBuR" style="margin-right: 8px;">
+            <i class="fa-brands fa-github" style="font-size: 28px;"></i>
+        </a>
+
+        <a href="https://twitter.com/IbaiBurgos" style="margin-right: 8px;">
+            <i class="fa-brands fa-twitter" style="font-size: 28px;"></i>
+        </a>
+
+        <a href="https://lichess.org/@/nike22" style="margin-right: 8px;">
+            <i class="fa-solid fa-chess-knight" style="font-size: 28px;"></i>
+        </a>
+
+        <a href="https://discordapp.com/users/#9535" style="margin-right: 8px;">
+            <i class="fa-brands fa-discord" style="font-size: 28px;"></i>
+        </a>
+
+        <a href="https://mastodon.online/@ibaibur" style="margin-right: 8px;">
+            <i class="fa-brands fa-mastodon" style="font-size: 28px;"></i>
+        </a>
+        <a href="https://open.spotify.com/user/z6uezfb57wniuztdh0wmvdo9y">
+            <i class="fa-brands fa-spotify" style="font-size: 28px;"></i>
+        </a>
+    </p>
+    </div>
+    <div id="myBoard" style="width: 600px">
+        <!-- Completely random chess game -->
+        <script type="module">
+            import { Chess } from './js/chess.js'
+            var board = null
+            var game = new Chess()
+            function makeRandomMove ()
+            {
+                var possibleMoves = game.moves()
+
+                if (game.game_over())
+                {
+                    game.reset();
+                    board.start();
+                    window.setTimeout(makeRandomMove, 500);
+                    return;
+                }
+
+                var randomIdx = Math.floor(Math.random() * possibleMoves.length)
+                game.move(possibleMoves[randomIdx])
+                board.position(game.fen())
+
+                window.setTimeout(makeRandomMove, 500)
+            }
+
+            board = Chessboard('myBoard', 'start')
+
+            window.setTimeout(makeRandomMove, 500)
+        </script>
+    </div>
+    <div class="why">
+        <h3>Why chessnibble?</h3>
+        <p>Well, since I was a child my two biggest hobbies <br>have  been computers and chess.</p>
+        <p>When I was going to buy the domain I wanted<br> to find a name to combine both.</p>
+        <p>Since <a href="https://who.is/whois/chessbits.com">chessbits.com</a> and <a href="https://who.is/whois/chessbytes.com">chessbytes.com</a> were<br>already bought I thought about<br><a href="https://who.is/whois/chessnibble.com">chessnibble.com.</a><br></p>
+        <p>The name stands for <a href="https://en.wikipedia.org/wiki/Chess">chess</a> + <a href="https://en.wikipedia.org/wiki/Nibble">nibble</a>, and fits<br>the initial idea perfectly.</p>
+    </div>
+    <footer style="font-size: 15px; font-family: monospace">
+        <b>
+            &copy;Chessnibble. All Rights Reserved
+        </b>
+    </footer>
+</body>
+</html>
