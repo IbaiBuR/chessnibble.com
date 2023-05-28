@@ -47,7 +47,7 @@ a {
         flex-direction: column;
         text-align: center;
         font-family: monospace;
-        font-size: 10px;
+        font-size: 8px;
     }
 }
 
@@ -60,9 +60,9 @@ a {
         flex-direction: column;
         float: right;
         text-align: center;
-        margin-right: 5%;
+        margin-right: 3%;
         font-family: monospace;
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 /* Adjust styles for larger screens */
