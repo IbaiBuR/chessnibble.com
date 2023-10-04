@@ -38,7 +38,7 @@ a {
     text-decoration: none !important;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 770px) {
     #myBoard {
         display: none !important; /* Dont display board in smaller screens */
     }
