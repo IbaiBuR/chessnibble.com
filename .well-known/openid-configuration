@@ -1,0 +1,13 @@
+{
+  "issuer": "https://siu.intron014.com/realms/master",
+  "authorization_endpoint": "https://siu.intron014.com/realms/master/protocol/openid-connect/auth",
+  "token_endpoint": "https://siu.intron014.com/realms/master/protocol/openid-connect/token",
+  "userinfo_endpoint": "https://siu.intron014.com/realms/master/protocol/openid-connect/userinfo",
+  "jwks_uri": "https://siu.intron014.com/realms/master/protocol/openid-connect/certs",
+  "response_types_supported": ["code","none","id_token","token","id_token token","code id_token","code token","code id_token token"],
+  "subject_types_supported": ["public","pairwise"],
+  "id_token_signing_alg_values_supported": ["PS384","ES384","RS384","HS256","HS512","ES256","RS256","HS384","ES512","PS256","PS512","RS512"],
+  "scopes_supported": ["openid","roles","address","offline_access","microprofile-jwt","acr","web-origins","profile","phone","email"],
+  "claims_supported": ["aud","sub","iss","auth_time","name","given_name","family_name","preferred_username","email","acr"]
+}
+
