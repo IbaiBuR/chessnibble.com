@@ -38,7 +38,7 @@ a {
     text-decoration: none !important;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){
     #myBoard {
         display: none !important; /* Dont display board in smaller screens */
     }
@@ -46,14 +46,29 @@ a {
         display: flex;
         flex-direction: column;
         text-align: center;
+	    margin-right: unset;
         font-family: monospace;
         font-size: 8px;
     }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
     #myBoard {
-        width: 400px; /* Dont display board in smaller screens */
+        display: none !important; /* Dont display board in smaller screens */
+    }
+    .why {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+	    margin-right: unset;
+        font-family: monospace;
+        font-size: 8px;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1440px) {
+    #myBoard {
+        width: 500px;
     }
     .why {
         display: flex;
@@ -62,11 +77,12 @@ a {
         text-align: center;
         margin-right: 3%;
         font-family: monospace;
-        font-size: 14px;
+        font-size: 12px;
     }
 }
+
 /* Adjust styles for larger screens */
-@media screen and (min-width: 1800px) {
+@media screen and (min-width: 1800px){
     #myBoard {
         width: 600px; /* Increase board size for bigger screens */
     }
